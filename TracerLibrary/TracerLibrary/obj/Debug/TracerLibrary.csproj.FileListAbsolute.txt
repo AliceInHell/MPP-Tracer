@@ -1,0 +1,4 @@
+E:\Study\Labs\5 semester\MPP\lab1\TracerLibrary\TracerLibrary\bin\Debug\TracerLibrary.dll
+E:\Study\Labs\5 semester\MPP\lab1\TracerLibrary\TracerLibrary\bin\Debug\TracerLibrary.pdb
+E:\Study\Labs\5 semester\MPP\lab1\TracerLibrary\TracerLibrary\obj\Debug\TracerLibrary.dll
+E:\Study\Labs\5 semester\MPP\lab1\TracerLibrary\TracerLibrary\obj\Debug\TracerLibrary.pdb

@@ -1,0 +1,8 @@
+E:\Study\Labs\5 semester\MPP\lab1\ConsoleTrace\bin\Debug\ConsoleTrace.exe.config
+E:\Study\Labs\5 semester\MPP\lab1\ConsoleTrace\bin\Debug\ConsoleTrace.exe
+E:\Study\Labs\5 semester\MPP\lab1\ConsoleTrace\bin\Debug\ConsoleTrace.pdb
+E:\Study\Labs\5 semester\MPP\lab1\ConsoleTrace\bin\Debug\TracerLibrary.dll
+E:\Study\Labs\5 semester\MPP\lab1\ConsoleTrace\bin\Debug\TracerLibrary.pdb
+E:\Study\Labs\5 semester\MPP\lab1\ConsoleTrace\obj\Debug\ConsoleTrace.csprojResolveAssemblyReference.cache
+E:\Study\Labs\5 semester\MPP\lab1\ConsoleTrace\obj\Debug\ConsoleTrace.exe
+E:\Study\Labs\5 semester\MPP\lab1\ConsoleTrace\obj\Debug\ConsoleTrace.pdb

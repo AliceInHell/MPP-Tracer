@@ -9,13 +9,10 @@ namespace TracerLibrary
 {
     public interface ITracer
     {
-        // вызывается в начале замеряемого метода
         void StartTrace();
-​
-        // вызывается в конце замеряемого метода
+
         void StopTrace();
-​
-        // получить результаты измерений
+
         TraceResult GetTraceResult();
     }
 
@@ -27,8 +24,10 @@ namespace TracerLibrary
         public Tracer()
         {
             //structure initialization
+            tracerStack = new Stack<object>[0];
             tracerStack[0] = new Stack<Object>();
             _traceResult = new TraceResult();
+            _traceResult.threads = new ThreadResult[0];
             _traceResult.threads[0] = new ThreadResult();
         }
 

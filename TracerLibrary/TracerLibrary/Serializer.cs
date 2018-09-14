@@ -18,7 +18,7 @@ namespace TracerLibrary
         private const string xmlFilePath = "xmlResilt.xml";
         private const string jsonFilePath = "jsonResilt.json";
         private XmlSerializer newXmlFormatter = new XmlSerializer(typeof(TraceResult));
-        private DataContractJsonSerializer newJSONFormatter = new DataContractJsonSerializer(typeof(TraceResult));
+        private DataContractJsonSerializer newJsonFormatter = new DataContractJsonSerializer(typeof(TraceResult));
 
         public void serialize(object someObject)
         {
@@ -29,7 +29,7 @@ namespace TracerLibrary
 
             using (FileStream fs = new FileStream(jsonFilePath, FileMode.OpenOrCreate))
             {
-                newJSONFormatter.WriteObject(fs, someObject);
+                newJsonFormatter.WriteObject(fs, someObject);
             }
         }
     }

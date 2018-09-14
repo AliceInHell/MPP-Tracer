@@ -20,7 +20,7 @@ namespace TracerLibrary
         public void write(object o)
         {
             newXmlFormatter.Serialize(Console.Out, o);
-            newJSONFormatter.WriteObject(Console.Out, o);
+            //newJSONFormatter.WriteObject(Console.Out, o);
         }
     }
 }
