@@ -9,15 +9,15 @@ namespace TracerLibrary
 {
     public interface IConsoleWriter
     {
-        void consoleWrite(object o);
+        void write(object o);
     }
 
     public class ConsoleWriter : IConsoleWriter
     {
-        public XmlSerializer newXmlFormatter = new XmlSerializer();
-        public DataContractJsonSerializer newJSONFormatter = new DataContractJsonSerializer();
+        private XmlSerializer newXmlFormatter = new XmlSerializer(typeof(TraceResult));
+        private DataContractJsonSerializer newJSONFormatter = new DataContractJsonSerializer(typeof(TraceResult));
 
-        public void consoleWrite(object o)
+        public void write(object o)
         {
             newXmlFormatter.Serialize(Console.Out, o);
             newJSONFormatter.WriteObject(Console.Out, o);
