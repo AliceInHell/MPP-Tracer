@@ -22,6 +22,12 @@ namespace ConsoleTrace
 
             TraceResult result = _tracer.GetTraceResult();
 
+            ResultWriter newWriter = new ResultWriter();
+            Serializer newSerializer = new Serializer();
+            newWriter.write(newSerializer.serializeToXml(result));
+            newWriter.write(newSerializer.serializeToJson(result));
+
+            Console.ReadLine();
         }
     }
 }

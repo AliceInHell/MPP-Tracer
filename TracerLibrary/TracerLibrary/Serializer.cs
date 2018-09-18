@@ -10,27 +10,31 @@ namespace TracerLibrary
 {
     public interface ISerializer
     {
-        void serialize(object o);
+        MemoryStream serializeToXml(TraceResult result);
+        MemoryStream serializeToJson(TraceResult result);
     }
 
     public class Serializer : ISerializer
     {
-        private const string xmlFilePath = "xmlResilt.xml";
-        private const string jsonFilePath = "jsonResilt.json";
         private XmlSerializer newXmlFormatter = new XmlSerializer(typeof(TraceResult));
         private DataContractJsonSerializer newJsonFormatter = new DataContractJsonSerializer(typeof(TraceResult));
 
-        public void serialize(object someObject)
+        public MemoryStream serializeToXml(TraceResult result)
         {
-            using (FileStream fs = new FileStream(xmlFilePath, FileMode.OpenOrCreate))
-            {
-                newXmlFormatter.Serialize(fs, someObject);
-            }
+            MemoryStream ms = new MemoryStream();         
+            newXmlFormatter.Serialize(ms, result);
+            ms.Position = 0;
 
-            using (FileStream fs = new FileStream(jsonFilePath, FileMode.OpenOrCreate))
-            {
-                newJsonFormatter.WriteObject(fs, someObject);
-            }
+            return ms;
+        }
+
+        public MemoryStream serializeToJson(TraceResult result)
+        {
+            MemoryStream ms = new MemoryStream();
+            newJsonFormatter.WriteObject(ms, result);
+            ms.Position = 0;
+
+            return ms;
         }
     }
 }

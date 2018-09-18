@@ -1,0 +1,31 @@
+{"threads":[{"id":9,"methods":[{"className":null,"methodName":null,"methods":null,"time":0},{"className":"TracerLibrary.Auto","methodName":"startDriving","methods":[{"className":"TracerLibrary.Passenger","methodName":"enjoyDriving","methods":[{"className":"TracerLibrary.Sunglasses","methodName":"wear","methods":[],"time":0}],"time":1}],"time":1},{"className":"TracerLibrary.Auto","methodName":"stopDriving","methods":[{"className":"TracerLibrary.Passenger","methodName":"leaveAuto","methods":[],"time":0}],"time":0}],"time":4}]}njoyDriving</methodName>
+              <className>TracerLibrary.Passenger</className>
+              <time>1</time>
+              <methods>
+                <MethodResult>
+                  <methodName>wear</methodName>
+                  <className>TracerLibrary.Sunglasses</className>
+                  <time>0</time>
+                  <methods />
+                </MethodResult>
+              </methods>
+            </MethodResult>
+          </methods>
+        </MethodResult>
+        <MethodResult>
+          <methodName>stopDriving</methodName>
+          <className>TracerLibrary.Auto</className>
+          <time>0</time>
+          <methods>
+            <MethodResult>
+              <methodName>leaveAuto</methodName>
+              <className>TracerLibrary.Passenger</className>
+              <time>0</time>
+              <methods />
+            </MethodResult>
+          </methods>
+        </MethodResult>
+      </methods>
+    </ThreadResult>
+  </threads>
+</TraceResult>>
