@@ -22,7 +22,7 @@ namespace TracerLibrary
             StreamReader sr = new StreamReader(ms);
             Console.WriteLine(sr.ReadToEnd());
 
-            using (FileStream fs = new FileStream(tracerResults, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(tracerResults, FileMode.Append))
             {
                 ms.WriteTo(fs);
             }
