@@ -19,16 +19,16 @@ namespace TracerLibrary
     public class Tracer : ITracer
     {
         private TraceResult _traceResult;
-        private Stack<Object>[] tracerStack;
+        private List<Stack<Object>> tracerStack;
 
         public Tracer()
         {
             //structure initialization
-            tracerStack = new Stack<object>[0];
-            tracerStack[0] = new Stack<Object>();
+            tracerStack = new List<Stack<object>>();
+            //tracerStack.Add(new Stack<object>());
             _traceResult = new TraceResult();
-            _traceResult.threads = new ThreadResult[0];
-            _traceResult.threads[0] = new ThreadResult();
+            _traceResult.threads = new List<ThreadResult>();
+            //_traceResult.threads.Add(new ThreadResult());
         }
 
         public void StartTrace()
@@ -37,21 +37,24 @@ namespace TracerLibrary
             int i = 0;
 
             //chooce thread from the array
-            while (i < _traceResult.threads.Length && _traceResult.threads[i].id != currentThreadId)
+            while (i < _traceResult.threads.Count && _traceResult.threads[i].id != currentThreadId)
                 i++;
 
-            if (i == _traceResult.threads.Length)
+            if (i == _traceResult.threads.Count)
             {
                 //unknown thread
                 //initialize thread, threadStack and threadTimer
+                _traceResult.threads.Add(new ThreadResult());
                 _traceResult.threads[i].id = currentThreadId;
                 _traceResult.threads[i].timer = new Stopwatch();
-                _traceResult.threads[i].methods[0] = new MethodResult();
+                _traceResult.threads[i].methods = new List<MethodResult>();
+                _traceResult.threads[i].methods.Add(new MethodResult());
 
                 //start trace
                 _traceResult.threads[i].timer.Start();
 
                 //push pointer to the Thread/Method-Result class with timer
+                tracerStack.Add(new Stack<object>());
                 tracerStack[i].Push(_traceResult.threads[i]);
             }
             else
@@ -65,11 +68,13 @@ namespace TracerLibrary
                 if (tracerStack[i].Count > 1)
                 {
                     //if called some method from our thread
-                    int j = ((MethodResult)tracerStack[i].Peek()).methods.Length;        //pointer helps us to deside treePosition
-                    ((MethodResult)tracerStack[i].Peek()).methods[j] = new MethodResult();
+                            //pointer helps us to deside treePosition
+                    ((MethodResult)tracerStack[i].Peek()).methods.Add(new MethodResult());
+                    int j = ((MethodResult)tracerStack[i].Peek()).methods.Count - 1;
                     ((MethodResult)tracerStack[i].Peek()).methods[j].methodName = methodName;
                     ((MethodResult)tracerStack[i].Peek()).methods[j].className = className;
                     ((MethodResult)tracerStack[i].Peek()).methods[j].timer = new Stopwatch();
+                    ((MethodResult)tracerStack[i].Peek()).methods[j].methods = new List<MethodResult>();
 
                     //start trace
                     ((MethodResult)tracerStack[i].Peek()).methods[j].timer.Start();
@@ -78,7 +83,21 @@ namespace TracerLibrary
                     tracerStack[i].Push(((MethodResult)tracerStack[i].Peek()).methods[j]);
                 }
                 else
-                    throw new Exception("");
+                {
+                    ((ThreadResult)tracerStack[i].Peek()).methods.Add(new MethodResult());
+                    int j = ((ThreadResult)tracerStack[i].Peek()).methods.Count - 1;
+                    ((ThreadResult)tracerStack[i].Peek()).methods[j].methodName = methodName;
+                    ((ThreadResult)tracerStack[i].Peek()).methods[j].className = className;
+                    ((ThreadResult)tracerStack[i].Peek()).methods[j].timer = new Stopwatch();
+                    ((ThreadResult)tracerStack[i].Peek()).methods[j].methods = new List<MethodResult>();
+
+                    //start trace
+                    ((ThreadResult)tracerStack[i].Peek()).methods[j].timer.Start();
+
+                    //push pointer to the Thread/Method-Result class with timer
+                    tracerStack[i].Push(((ThreadResult)tracerStack[i].Peek()).methods[j]);
+                }
+                    //throw new Exception("");
 
             }
         }
@@ -89,7 +108,7 @@ namespace TracerLibrary
             int i = 0;
 
             //chooce thread from the array
-            while (i < _traceResult.threads.Length && _traceResult.threads[i].id != currentThreadId)
+            while (i < _traceResult.threads.Count && _traceResult.threads[i].id != currentThreadId)
                 i++;
 
             if (tracerStack[i].Count > 1)

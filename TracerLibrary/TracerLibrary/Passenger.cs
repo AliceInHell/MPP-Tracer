@@ -12,7 +12,7 @@ namespace TracerLibrary
 
         public Passenger(ITracer tracer)
         {
-            _glasses = new Sunglasses(_tracer);
+            _glasses = new Sunglasses(tracer);
             _tracer = tracer;
         }
 

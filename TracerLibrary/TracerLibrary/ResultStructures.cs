@@ -14,7 +14,7 @@ namespace TracerLibrary
     public class TraceResult
     {
         [DataMember]
-        public ThreadResult[] threads;
+        public List<ThreadResult> threads;
     }
 
     [Serializable]
@@ -28,7 +28,7 @@ namespace TracerLibrary
         [XmlIgnore]
         public Stopwatch timer;
         [DataMember]
-        public MethodResult[] methods;
+        public List<MethodResult> methods;
     }
 
     [Serializable]
@@ -44,6 +44,6 @@ namespace TracerLibrary
         [XmlIgnore]
         public Stopwatch timer;
         [DataMember]
-        public MethodResult[] methods;
+        public List<MethodResult> methods;
     }    
 }

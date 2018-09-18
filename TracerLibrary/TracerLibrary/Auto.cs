@@ -16,7 +16,7 @@ namespace TracerLibrary
             _passenger = new Passenger(_tracer);
         }
 
-        public void startDrive()
+        public void startDriving()
         {
             _tracer.StartTrace();
 
@@ -25,9 +25,13 @@ namespace TracerLibrary
             _tracer.StopTrace();
         }
 
-        public void stopDriveing()
+        public void stopDriving()
         {
+            _tracer.StartTrace();
+
             _passenger.leaveAuto();
+
+            _tracer.StopTrace();
         }
     }
 }

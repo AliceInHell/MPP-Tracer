@@ -15,8 +15,8 @@ namespace ConsoleTrace
             _tracer.StartTrace();
 
             Auto someCar = new Auto(_tracer);
-            someCar.startDrive();
-            someCar.stopDriveing();
+            someCar.startDriving();
+            someCar.stopDriving();
 
             _tracer.StopTrace();
 
