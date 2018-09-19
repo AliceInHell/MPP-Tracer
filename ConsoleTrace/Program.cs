@@ -9,14 +9,14 @@ namespace ConsoleTrace
 {
     class Program
     {
-        static void threadFunc(object tracer)
+        static void threadFunc(ITracer tracer)
         {
-            ((ITracer)tracer).StartTrace();
+            tracer.StartTrace();
 
-            Auto someCar = new Auto((ITracer)tracer);
+            Auto someCar = new Auto(tracer);
             someCar.startDriving();
 
-            ((ITracer)tracer).StopTrace();
+            tracer.StopTrace();
         }
 
         static void Main(string[] args)
@@ -24,8 +24,8 @@ namespace ConsoleTrace
             ITracer _tracer = new Tracer();
 
             //new thread
-            Thread secondThread = new Thread(new ParameterizedThreadStart(threadFunc));
-            secondThread.Start(_tracer);
+            Thread secondThread = new Thread(() => threadFunc(_tracer));
+            secondThread.Start();
 
             //lets work in this thread
             _tracer.StartTrace();
@@ -41,10 +41,11 @@ namespace ConsoleTrace
 
             //output
             ResultWriter newWriter = new ResultWriter();
-            Serializer newSerializer = new Serializer();
-            newWriter.write(newSerializer.serializeToXml(result));
+            XMLSerializer newXMLSerializer = new XMLSerializer();
+            JSONSerializer newJSONSerializer = new JSONSerializer();
+            newWriter.write(newXMLSerializer.serialize(result));
             Console.WriteLine();
-            newWriter.write(newSerializer.serializeToJson(result));
+            newWriter.write(newJSONSerializer.serialize(result));
 
             Console.ReadLine();
         }

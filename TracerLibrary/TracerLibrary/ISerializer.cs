@@ -8,7 +8,6 @@ namespace TracerLibrary
 {
     public interface ISerializer
     {
-        MemoryStream serializeToXml(TraceResult result);
-        MemoryStream serializeToJson(TraceResult result);
+        MemoryStream serialize(TraceResult result);
     }
 }

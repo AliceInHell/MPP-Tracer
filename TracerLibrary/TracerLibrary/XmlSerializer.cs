@@ -9,23 +9,17 @@ using Newtonsoft.Json;
 
 namespace TracerLibrary
 {
-    public class Serializer : ISerializer
+    public class XMLSerializer : ISerializer
     {
         private XmlSerializer newXmlFormatter = new XmlSerializer(typeof(TraceResult));
 
-        public MemoryStream serializeToXml(TraceResult result)
+        public MemoryStream serialize(TraceResult result)
         {
             MemoryStream ms = new MemoryStream();         
             newXmlFormatter.Serialize(ms, result);
             ms.Position = 0;
 
             return ms;
-        }
-
-        public MemoryStream serializeToJson(TraceResult result)
-        {
-            byte[] byteArray = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(result, Formatting.Indented));
-            return new MemoryStream(byteArray);
         }
 
         public TraceResult deserialize(MemoryStream ms)

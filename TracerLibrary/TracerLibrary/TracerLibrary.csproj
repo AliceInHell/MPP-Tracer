@@ -47,10 +47,11 @@
     <Compile Include="IResultWriter.cs" />
     <Compile Include="ISerializer.cs" />
     <Compile Include="ITracer.cs" />
+    <Compile Include="JSONSerializer.cs" />
     <Compile Include="MethodResult.cs" />
     <Compile Include="ResultWriter.cs" />
     <Compile Include="Passenger.cs" />
-    <Compile Include="Serializer.cs" />
+    <Compile Include="XMLSerializer.cs" />
     <Compile Include="Sunglasses.cs" />
     <Compile Include="ThreadResult.cs" />
     <Compile Include="Tracer.cs" />

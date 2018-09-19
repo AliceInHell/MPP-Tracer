@@ -11,7 +11,8 @@ namespace UnitTests
         private TestClass _testClass;
         private ITracer _tracer;
 
-        public UnitTestClass()
+        [TestInitialize]
+        public void SetUp()
         {
             _tracer = new Tracer();
             _testClass = new TestClass(_tracer);
@@ -62,11 +63,9 @@ namespace UnitTests
         [TestMethod]
         public void anotherMethodTimeTest()
         {
-            _tracer.StartTrace();
-            _testClass.anotherMethod();
-            _tracer.StopTrace();
+            TraceResult result = Measure(() => _testClass.anotherMethod());
 
-            Assert.IsTrue(20 <= _tracer.GetTraceResult().threads[0].methods[0].time);
+            Assert.IsTrue(20 <= result.threads[0].methods[0].time);
         }
 
         public void insertedMethodNameTest()
@@ -77,6 +76,14 @@ namespace UnitTests
         public void insertedMethodClassNameTest()
         {
             Assert.AreEqual("anotherMethod", _tracer.GetTraceResult().threads[0].methods[1].methods[0].className);
+        }
+
+        public TraceResult Measure(Action action)
+        {
+            _tracer.StartTrace();
+            action();
+            _tracer.StopTrace();
+            return _tracer.GetTraceResult();
         }
     }
 }

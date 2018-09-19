@@ -133,10 +133,10 @@ namespace TracerLibrary
 
         public TraceResult GetTraceResult()
         {
-            Serializer newSerializer = new Serializer();
+            XMLSerializer newSerializer = new XMLSerializer();
             lock (locker)
             {
-                return newSerializer.deserialize(newSerializer.serializeToXml(_traceResult));
+                return newSerializer.deserialize(newSerializer.serialize(_traceResult));
             }
         }
     }
