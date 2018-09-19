@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Serialization;
-using System.Runtime.Serialization.Json;
 using System.IO;
 
 namespace TracerLibrary
 {
-    public interface IResultWriter
-    {
-        void write(MemoryStream ms);
-    }
-
     public class ResultWriter : IResultWriter
     {
         private const string tracerResults = "TracerResults.txt";

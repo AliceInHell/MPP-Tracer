@@ -2,37 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TracerLibrary;
 using System.Threading;
 
-namespace TracerLibrary
+namespace UnitTests
 {
-    public class Auto
+    public class TestClass
     {
         private ITracer _tracer;
-        private Passenger _passenger;
 
-        public Auto(ITracer tracer)
+        public TestClass(ITracer tracer)
         {
             _tracer = tracer;
-            _passenger = new Passenger(_tracer);
         }
 
-        public void startDriving()
+        public void someMethod()
         {
             _tracer.StartTrace();
 
-            Thread.Sleep(5);
-            _passenger.enjoyDriving();
+            Thread.Sleep(10);
 
             _tracer.StopTrace();
         }
 
-        public void stopDriving()
+        public void anotherMethod()
         {
             _tracer.StartTrace();
 
-            Thread.Sleep(3);
-            _passenger.leaveAuto();
+            Thread.Sleep(10);
+            this.someMethod();
 
             _tracer.StopTrace();
         }

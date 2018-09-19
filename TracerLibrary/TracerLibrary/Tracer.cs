@@ -7,15 +7,6 @@ using System.Threading;
 
 namespace TracerLibrary
 {
-    public interface ITracer
-    {
-        void StartTrace();
-
-        void StopTrace();
-
-        TraceResult GetTraceResult();
-    }
-
     public class Tracer : ITracer
     {
         private TraceResult _traceResult;
@@ -142,9 +133,10 @@ namespace TracerLibrary
 
         public TraceResult GetTraceResult()
         {
-            lock(locker)
+            Serializer newSerializer = new Serializer();
+            lock (locker)
             {
-                return this._traceResult;
+                return newSerializer.deserialize(newSerializer.serializeToXml(_traceResult));
             }
         }
     }

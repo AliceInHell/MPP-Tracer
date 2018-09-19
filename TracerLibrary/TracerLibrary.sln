@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TracerLibrary", "TracerLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTrace", "..\ConsoleTrace\ConsoleTrace.csproj", "{5E25F879-75D2-471A-8BEB-30DA74186C17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{BC2AFD25-D6EE-4BF0-A507-4936776D0BE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5E25F879-75D2-471A-8BEB-30DA74186C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E25F879-75D2-471A-8BEB-30DA74186C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E25F879-75D2-471A-8BEB-30DA74186C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2AFD25-D6EE-4BF0-A507-4936776D0BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2AFD25-D6EE-4BF0-A507-4936776D0BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2AFD25-D6EE-4BF0-A507-4936776D0BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2AFD25-D6EE-4BF0-A507-4936776D0BE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace TracerLibrary
 {
@@ -20,6 +21,7 @@ namespace TracerLibrary
         {
             _tracer.StartTrace();
 
+            Thread.Sleep(7);
             _glasses.wear();
 
             _tracer.StopTrace();
@@ -28,6 +30,8 @@ namespace TracerLibrary
         public void leaveAuto()
         {
             _tracer.StartTrace();
+
+            Thread.Sleep(2);
 
             _tracer.StopTrace();
         }

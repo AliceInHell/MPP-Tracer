@@ -5,19 +5,13 @@ using System.Text;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Json;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace TracerLibrary
 {
-    public interface ISerializer
-    {
-        MemoryStream serializeToXml(TraceResult result);
-        MemoryStream serializeToJson(TraceResult result);
-    }
-
     public class Serializer : ISerializer
     {
         private XmlSerializer newXmlFormatter = new XmlSerializer(typeof(TraceResult));
-        private DataContractJsonSerializer newJsonFormatter = new DataContractJsonSerializer(typeof(TraceResult));
 
         public MemoryStream serializeToXml(TraceResult result)
         {
@@ -30,11 +24,13 @@ namespace TracerLibrary
 
         public MemoryStream serializeToJson(TraceResult result)
         {
-            MemoryStream ms = new MemoryStream();
-            newJsonFormatter.WriteObject(ms, result);
-            ms.Position = 0;
+            byte[] byteArray = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(result, Formatting.Indented));
+            return new MemoryStream(byteArray);
+        }
 
-            return ms;
+        public TraceResult deserialize(MemoryStream ms)
+        {
+            return (TraceResult)newXmlFormatter.Deserialize(ms);
         }
     }
 }

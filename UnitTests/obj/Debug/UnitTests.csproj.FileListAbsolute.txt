@@ -1,0 +1,9 @@
+E:\Study\Labs\5 semester\MPP\lab1\UnitTests\bin\Debug\UnitTests.dll
+E:\Study\Labs\5 semester\MPP\lab1\UnitTests\bin\Debug\UnitTests.pdb
+E:\Study\Labs\5 semester\MPP\lab1\UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Study\Labs\5 semester\MPP\lab1\UnitTests\bin\Debug\TracerLibrary.dll
+E:\Study\Labs\5 semester\MPP\lab1\UnitTests\bin\Debug\Newtonsoft.Json.dll
+E:\Study\Labs\5 semester\MPP\lab1\UnitTests\bin\Debug\TracerLibrary.pdb
+E:\Study\Labs\5 semester\MPP\lab1\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+E:\Study\Labs\5 semester\MPP\lab1\UnitTests\obj\Debug\UnitTests.dll
+E:\Study\Labs\5 semester\MPP\lab1\UnitTests\obj\Debug\UnitTests.pdb
