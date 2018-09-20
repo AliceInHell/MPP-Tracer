@@ -272,4 +272,278 @@
       ]
     }
   ]
+}<?xml version="1.0"?>
+<TraceResult xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Threads>
+    <ThreadResult>
+      <id>9</id>
+      <time>4821</time>
+      <methods>
+        <MethodResult>
+          <methodName>startDriving</methodName>
+          <className>TracerLibrary.Auto</className>
+          <time>33</time>
+          <methods>
+            <MethodResult>
+              <methodName>enjoyDriving</methodName>
+              <className>TracerLibrary.Passenger</className>
+              <time>27</time>
+              <methods>
+                <MethodResult>
+                  <methodName>wear</methodName>
+                  <className>TracerLibrary.Sunglasses</className>
+                  <time>20</time>
+                  <methods />
+                </MethodResult>
+              </methods>
+            </MethodResult>
+          </methods>
+        </MethodResult>
+        <MethodResult>
+          <methodName>stopDriving</methodName>
+          <className>TracerLibrary.Auto</className>
+          <time>22</time>
+          <methods>
+            <MethodResult>
+              <methodName>leaveAuto</methodName>
+              <className>TracerLibrary.Passenger</className>
+              <time>7</time>
+              <methods />
+            </MethodResult>
+          </methods>
+        </MethodResult>
+      </methods>
+    </ThreadResult>
+    <ThreadResult>
+      <id>10</id>
+      <time>42</time>
+      <methods>
+        <MethodResult>
+          <methodName>startDriving</methodName>
+          <className>TracerLibrary.Auto</className>
+          <time>38</time>
+          <methods>
+            <MethodResult>
+              <methodName>enjoyDriving</methodName>
+              <className>TracerLibrary.Passenger</className>
+              <time>32</time>
+              <methods>
+                <MethodResult>
+                  <methodName>wear</methodName>
+                  <className>TracerLibrary.Sunglasses</className>
+                  <time>24</time>
+                  <methods />
+                </MethodResult>
+              </methods>
+            </MethodResult>
+          </methods>
+        </MethodResult>
+      </methods>
+    </ThreadResult>
+  </Threads>
+</TraceResult>{
+  "Threads": [
+    {
+      "id": 9,
+      "time": 4821,
+      "methods": [
+        {
+          "methodName": "startDriving",
+          "className": "TracerLibrary.Auto",
+          "time": 33,
+          "methods": [
+            {
+              "methodName": "enjoyDriving",
+              "className": "TracerLibrary.Passenger",
+              "time": 27,
+              "methods": [
+                {
+                  "methodName": "wear",
+                  "className": "TracerLibrary.Sunglasses",
+                  "time": 20,
+                  "methods": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "methodName": "stopDriving",
+          "className": "TracerLibrary.Auto",
+          "time": 22,
+          "methods": [
+            {
+              "methodName": "leaveAuto",
+              "className": "TracerLibrary.Passenger",
+              "time": 7,
+              "methods": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "time": 42,
+      "methods": [
+        {
+          "methodName": "startDriving",
+          "className": "TracerLibrary.Auto",
+          "time": 38,
+          "methods": [
+            {
+              "methodName": "enjoyDriving",
+              "className": "TracerLibrary.Passenger",
+              "time": 32,
+              "methods": [
+                {
+                  "methodName": "wear",
+                  "className": "TracerLibrary.Sunglasses",
+                  "time": 24,
+                  "methods": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}<?xml version="1.0"?>
+<TraceResult xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Threads>
+    <ThreadResult>
+      <id>10</id>
+      <time>39</time>
+      <methods>
+        <MethodResult>
+          <methodName>startDriving</methodName>
+          <className>TracerLibrary.Auto</className>
+          <time>24</time>
+          <methods>
+            <MethodResult>
+              <methodName>enjoyDriving</methodName>
+              <className>TracerLibrary.Passenger</className>
+              <time>18</time>
+              <methods>
+                <MethodResult>
+                  <methodName>wear</methodName>
+                  <className>TracerLibrary.Sunglasses</className>
+                  <time>9</time>
+                  <methods />
+                </MethodResult>
+              </methods>
+            </MethodResult>
+          </methods>
+        </MethodResult>
+        <MethodResult>
+          <methodName>stopDriving</methodName>
+          <className>TracerLibrary.Auto</className>
+          <time>6</time>
+          <methods>
+            <MethodResult>
+              <methodName>leaveAuto</methodName>
+              <className>TracerLibrary.Passenger</className>
+              <time>2</time>
+              <methods />
+            </MethodResult>
+          </methods>
+        </MethodResult>
+      </methods>
+    </ThreadResult>
+    <ThreadResult>
+      <id>11</id>
+      <time>30</time>
+      <methods>
+        <MethodResult>
+          <methodName>startDriving</methodName>
+          <className>TracerLibrary.Auto</className>
+          <time>24</time>
+          <methods>
+            <MethodResult>
+              <methodName>enjoyDriving</methodName>
+              <className>TracerLibrary.Passenger</className>
+              <time>18</time>
+              <methods>
+                <MethodResult>
+                  <methodName>wear</methodName>
+                  <className>TracerLibrary.Sunglasses</className>
+                  <time>10</time>
+                  <methods />
+                </MethodResult>
+              </methods>
+            </MethodResult>
+          </methods>
+        </MethodResult>
+      </methods>
+    </ThreadResult>
+  </Threads>
+</TraceResult>{
+  "Threads": [
+    {
+      "id": 10,
+      "time": 39,
+      "methods": [
+        {
+          "methodName": "startDriving",
+          "className": "TracerLibrary.Auto",
+          "time": 24,
+          "methods": [
+            {
+              "methodName": "enjoyDriving",
+              "className": "TracerLibrary.Passenger",
+              "time": 18,
+              "methods": [
+                {
+                  "methodName": "wear",
+                  "className": "TracerLibrary.Sunglasses",
+                  "time": 9,
+                  "methods": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "methodName": "stopDriving",
+          "className": "TracerLibrary.Auto",
+          "time": 6,
+          "methods": [
+            {
+              "methodName": "leaveAuto",
+              "className": "TracerLibrary.Passenger",
+              "time": 2,
+              "methods": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "time": 30,
+      "methods": [
+        {
+          "methodName": "startDriving",
+          "className": "TracerLibrary.Auto",
+          "time": 24,
+          "methods": [
+            {
+              "methodName": "enjoyDriving",
+              "className": "TracerLibrary.Passenger",
+              "time": 18,
+              "methods": [
+                {
+                  "methodName": "wear",
+                  "className": "TracerLibrary.Sunglasses",
+                  "time": 10,
+                  "methods": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

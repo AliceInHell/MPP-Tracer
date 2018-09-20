@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
+using System.Collections.Generic;
 
 namespace TracerLibrary
 {
@@ -10,7 +12,10 @@ namespace TracerLibrary
     [DataContract]
     public class TraceResult
     {
+        [XmlIgnore]
+        public ConcurrentDictionary<int, ThreadResult> threads;
+
         [DataMember]
-        public List<ThreadResult> threads;
+        public List<ThreadResult> Threads;
     }
 }

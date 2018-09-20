@@ -18,6 +18,8 @@ namespace TracerLibrary
         public long time;
         [XmlIgnore]
         public Stopwatch timer;
+        [XmlIgnore]
+        public Stack<MethodResult> stack;
         [DataMember]
         public List<MethodResult> methods;
     }
